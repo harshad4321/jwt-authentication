@@ -4,14 +4,18 @@ Authorization: Bearerey eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia3lsZSI
 ###
 
 POST 
- HTTP//localhost:4000/token
+ http://localhost:4000/token
 Content-Type: :  application/json
 
 {
     "token":
 }
-
-
+###
+DELETE 
+ http://localhost:4000/delete
+{
+    "token":
+}
 
 ###
 POST http://localhost:4000/login

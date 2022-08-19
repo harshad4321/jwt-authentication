@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 
 const jwt = require('jsonwebtoken')
+const { token } = require('morgan')
 app.use (express.json())
 
 let refreshToken =[]
@@ -17,6 +18,12 @@ app.post('/token',(req,res)=>{
       const accessToken=generateAccesstoken({name:user.name})
       res.json({accessToken:accessToken})
    })
+})
+
+app.delete('/delete',(req,res)=>{
+
+refreshToken= refreshToken.filter(token=> token !==  req.body.token  )   
+res.sendStatus(204)
 })
 
 
